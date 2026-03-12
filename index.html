@@ -38,7 +38,7 @@
       border-radius: 50%;
       position: fixed; top: 0; left: 0;
       pointer-events: none;
-      z-index: 9999;
+      z-index: 999;
       transition: transform 0.15s ease;
       mix-blend-mode: difference;
     }
@@ -48,7 +48,7 @@
       border-radius: 50%;
       position: fixed; top: 0; left: 0;
       pointer-events: none;
-      z-index: 9998;
+      z-index: 998;
       transition: transform 0.4s ease, width 0.3s, height 0.3s, opacity 0.3s;
       opacity: 0.5;
     }
@@ -202,6 +202,8 @@
       font-weight: 500;
       border-radius: 2px;
       transition: background 0.2s, transform 0.2s;
+      position: relative;
+      z-index: 1000;
     }
     .btn-primary:hover { background: var(--cream); transform: translateY(-2px); }
     .btn-ghost {
@@ -523,6 +525,8 @@
       color: var(--muted);
       text-decoration: none;
       padding: 0.85rem 1.75rem;
+      position: relative;
+      z-index: 1000
       border: 1px solid var(--border);
       border-radius: 2px;
       transition: color 0.2s, border-color 0.2s, transform 0.2s;
