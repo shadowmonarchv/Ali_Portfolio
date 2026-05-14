@@ -2,7 +2,7 @@
 
 > A minimalist, high-performance developer portfolio built to showcase projects at the intersection of code and curiosity. 
 
-![Portfolio Preview](https://via.placeholder.com/1200x600/0a0a0b/c9a84c?text=Ali+Mehdi+Mirza+Portfolio)  
+![Portfolio Preview](./Portfolioali.png)  
 *(Note: Replace the link above with a screenshot of your actual live website)*
 
 ## ⚡ Overview
