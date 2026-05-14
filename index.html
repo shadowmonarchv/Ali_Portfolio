@@ -52,6 +52,12 @@
       transition: transform 0.4s ease, width 0.3s, height 0.3s, opacity 0.3s;
       opacity: 0.5;
     }
+    .cursor-ring.hover-effect {
+      width: 50px;
+      height: 50px;
+      background: rgba(201,168,76,0.1);
+      border-color: var(--cream);
+    }
 
     /* Noise overlay */
     body::before {
@@ -526,7 +532,7 @@
       text-decoration: none;
       padding: 0.85rem 1.75rem;
       position: relative;
-      z-index: 1000
+      z-index: 1000;
       border: 1px solid var(--border);
       border-radius: 2px;
       transition: color 0.2s, border-color 0.2s, transform 0.2s;
@@ -588,7 +594,7 @@
     <div class="hero-grid-bg"></div>
     <div class="hero-glow"></div>
     <div class="hero-content">
-      <div class="hero-eyebrow">Mumbai, Maharashtra · Open to Remote</div>
+      <div class="hero-eyebrow" id = "smart-greeting">Mumbai, Maharashtra · Open to Remote</div>
       <h1>Ali Mehdi<br/><em>Mirza</em></h1>
       <p class="hero-subtitle">
         Engineer-in-training. Full-stack developer. Mathematics educator.
@@ -787,23 +793,31 @@
     <h2>Things I've<br/>built</h2>
     <div class="projects-grid">
 
-      <div class="project-card">
+     <div class="project-card">
         <div class="project-header">
-          <span class="project-num">01 / MERN</span>
-          <span class="project-icon">🗃️</span>
+          <span class="project-num">01 / Computer Vision</span>
+          <span class="project-icon">🐂</span>
         </div>
         <div class="project-body">
-          <div class="project-title">Student Feedback Collection System</div>
-          <p class="project-desc">
-            Designed and deployed a full-stack web application for collecting and managing student feedback.
-            Built as a DBMS college submission, demonstrating end-to-end development capability.
+          <div class="project-title" style="display: flex; justify-content: space-between; align-items: center;">
+            PashuNet-AI
+            <button onclick="toggleAI(this, 'pashunet')" style="background: none; border: 1px solid var(--gold-dim); color: var(--gold); font-family: 'DM Mono'; font-size: 0.6rem; padding: 0.3rem 0.6rem; cursor: pointer; border-radius: 2px;">🤖 Simplify</button>
+          </div>
+          
+          <!-- Technical Description -->
+          <p class="project-desc" id="desc-pashunet-tech">
+            Engineered an image classification system utilizing deep learning to accurately identify and categorize various cattle and buffalo breeds based on visual inputs.
           </p>
+          
+          <!-- AI Simplified Description (Hidden by default) -->
+          <p class="project-desc" id="desc-pashunet-simple" style="display: none; color: var(--white);">
+            <em>AI Summary:</em> An app that looks at a photo of a cow or buffalo and instantly tells you exactly what breed it is.
+          </p>
+
           <div class="project-stack">
-            <span class="stack-tag">MongoDB</span>
-            <span class="stack-tag">Express.js</span>
-            <span class="stack-tag">React</span>
-            <span class="stack-tag">Node.js</span>
-            <span class="stack-tag">DBMS</span>
+            <span class="stack-tag">Python</span>
+            <span class="stack-tag">Deep Learning</span>
+            <span class="stack-tag">Image Classification</span>
           </div>
         </div>
       </div>
@@ -908,6 +922,23 @@
   </footer>
 
   <script>
+    // AI Summarizer Toggle
+    function toggleAI(btn, projectId) {
+      const techDesc = document.getElementById(`desc-${projectId}-tech`);
+      const simpleDesc = document.getElementById(`desc-${projectId}-simple`);
+      
+      if (techDesc.style.display === "none") {
+        techDesc.style.display = "block";
+        simpleDesc.style.display = "none";
+        btn.innerText = "🤖 Simplify";
+        btn.style.color = "var(--gold)";
+      } else {
+        techDesc.style.display = "none";
+        simpleDesc.style.display = "block";
+        btn.innerText = "⚙️ Technical";
+        btn.style.color = "var(--accent)"; // Uses the blue accent you defined
+      }
+    }
     // Custom cursor
     const cursor = document.getElementById('cursor');
     const ring = document.getElementById('cursorRing');
@@ -923,6 +954,16 @@
       requestAnimationFrame(animateRing);
     }
     animateRing();
+    // Make cursor react to links and buttons
+    const clickables = document.querySelectorAll('a, .btn-primary, .btn-ghost, .tag');
+    clickables.forEach(el => {
+      el.addEventListener('mouseenter', () => {
+        ring.classList.add('hover-effect');
+      });
+      el.addEventListener('mouseleave', () => {
+        ring.classList.remove('hover-effect');
+      });
+    });
 
     // Navbar scroll
     const navbar = document.getElementById('navbar');
@@ -944,6 +985,25 @@
     }, { threshold: 0.1 });
 
     document.querySelectorAll('.timeline-item, .skill-card, .project-card').forEach(el => observer.observe(el));
+    // Smart Contextual Greeting
+    function updateGreeting() {
+      const greetingElement = document.getElementById('smart-greeting');
+      const hour = new Date().getHours();
+      let dynamicText = "";
+
+      if (hour >= 22 || hour < 5) {
+        dynamicText = "Late night coding? Welcome. · ";
+      } else if (hour >= 5 && hour < 12) {
+        dynamicText = "Good morning. Let's build. · ";
+      } else if (hour >= 12 && hour < 18) {
+        dynamicText = "Good afternoon. · ";
+      } else {
+        dynamicText = "Good evening. · ";
+      }
+      
+      greetingElement.innerHTML = dynamicText + "Mumbai, Maharashtra · Open to Remote";
+    }
+    updateGreeting();
   </script>
 </body>
 </html>
