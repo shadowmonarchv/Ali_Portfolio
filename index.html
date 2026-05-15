@@ -7,7 +7,7 @@
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Mono:wght@300;400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="style.css">
- </head>
+</head>
 <body>
 
   <div class="cursor" id="cursor"></div>
@@ -23,6 +23,11 @@
       <li><a href="#projects">Projects</a></li>
       <li><a href="#connect">Connect</a></li>
     </ul>
+    <!-- ✅ RESUME BUTTON IN NAV -->
+    <a href="resume.pdf" download="Ali_Mehdi_Mirza_Resume.pdf" class="nav-resume-btn">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+      Resume
+    </a>
   </nav>
 
   <!-- HERO -->
@@ -30,7 +35,7 @@
     <div class="hero-grid-bg"></div>
     <div class="hero-glow"></div>
     <div class="hero-content">
-      <div class="hero-eyebrow" id = "smart-greeting">Mumbai, Maharashtra · Open to Remote</div>
+      <div class="hero-eyebrow" id="smart-greeting">Mumbai, Maharashtra · Open to Remote</div>
       <h1>Ali Mehdi<br/><em>Mirza</em></h1>
       <p class="hero-subtitle">
         Engineer-in-training. Full-stack developer. Mathematics educator.
@@ -47,6 +52,11 @@
       <div class="hero-cta">
         <a href="#projects" class="btn-primary">View Projects</a>
         <a href="#connect" class="btn-ghost">Get in touch →</a>
+        <!-- ✅ RESUME BUTTON IN HERO -->
+        <a href="resume.pdf" download="Ali_Mehdi_Mirza_Resume.pdf" class="btn-resume">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Download CV
+        </a>
       </div>
     </div>
   </section>
@@ -116,7 +126,7 @@
           intuition through structured lessons, problem-solving sessions, and regular assessments.
         </p>
       </div>
-      
+
       <div class="timeline-item">
         <div class="timeline-dot"></div>
         <div class="timeline-date">May 2025 – Jul 2025</div>
@@ -126,9 +136,9 @@
           Worked as a freelance contributor for Outlier AI over 3 months, helping train and evaluate
           AI models through data annotation, prompt writing, and response rating tasks — contributing
           to the improvement of large language model performance and reliability.
-       </p>
-     </div>
-      
+        </p>
+      </div>
+
       <div class="timeline-item">
         <div class="timeline-dot"></div>
         <div class="timeline-date">Feb 2026</div>
@@ -229,7 +239,7 @@
     <h2>Things I've<br/>built</h2>
     <div class="projects-grid">
 
-     <div class="project-card">
+      <div class="project-card">
         <div class="project-header">
           <span class="project-num">01 / Computer Vision</span>
           <span class="project-icon">🐂</span>
@@ -239,17 +249,12 @@
             PashuNet-AI
             <button onclick="toggleAI(this, 'pashunet')" style="background: none; border: 1px solid var(--gold-dim); color: var(--gold); font-family: 'DM Mono'; font-size: 0.6rem; padding: 0.3rem 0.6rem; cursor: pointer; border-radius: 2px;">🤖 Simplify</button>
           </div>
-          
-          <!-- Technical Description -->
           <p class="project-desc" id="desc-pashunet-tech">
             Engineered an image classification system utilizing deep learning to accurately identify and categorize various cattle and buffalo breeds based on visual inputs.
           </p>
-          
-          <!-- AI Simplified Description (Hidden by default) -->
           <p class="project-desc" id="desc-pashunet-simple" style="display: none; color: var(--white);">
             <em>AI Summary:</em> An app that looks at a photo of a cow or buffalo and instantly tells you exactly what breed it is.
           </p>
-
           <div class="project-stack">
             <span class="stack-tag">Python</span>
             <span class="stack-tag">Deep Learning</span>
@@ -325,16 +330,58 @@
     <h2>Let's build<br/>something together</h2>
     <p>Open to full-stack development roles, freelance projects, and collaborations — remote or in Mumbai.</p>
 
-<div style="display:flex;justify-content:center;gap:2.5rem;margin-bottom:2rem;flex-wrap:wrap;">
-  <span style="font-family:'DM Mono',monospace;font-size:0.75rem;color:var(--muted);letter-spacing:0.08em;">
-    📞 <a href="tel:+918953019234" style="color:var(--gold);text-decoration:none;">+91 89530 19234</a>
-  </span>
-  <span style="font-family:'DM Mono',monospace;font-size:0.75rem;color:var(--muted);letter-spacing:0.08em; display: flex; align-items: center; gap: 0.5rem;">
-    ✉️ <button onclick="copyEmail(this)" style="background:none; border:none; color:var(--gold); font-family:inherit; font-size:inherit; cursor:none; padding:0;">alimehdimirza1010@gmail.com</button>
-  </span>
-</div>
+    <div style="display:flex;justify-content:center;gap:2.5rem;margin-bottom:2.5rem;flex-wrap:wrap;">
+      <span style="font-family:'DM Mono',monospace;font-size:0.75rem;color:var(--muted);letter-spacing:0.08em;">
+        📞 <a href="tel:+918953019234" style="color:var(--gold);text-decoration:none;">+91 89530 19234</a>
+      </span>
+      <span style="font-family:'DM Mono',monospace;font-size:0.75rem;color:var(--muted);letter-spacing:0.08em; display: flex; align-items: center; gap: 0.5rem;">
+        ✉️ <button onclick="copyEmail(this)" style="background:none; border:none; color:var(--gold); font-family:inherit; font-size:inherit; cursor:none; padding:0;">alimehdimirza1010@gmail.com</button>
+      </span>
+    </div>
 
-<a href="mailto:alimehdimirza1010@gmail.com" class="btn-primary">Say Hello</a>
+    <!-- ✅ FORMSPREE CONTACT FORM -->
+    <!-- IMPORTANT: Replace YOUR_FORM_ID below with your actual Formspree form ID -->
+    <!-- Get it free at https://formspree.io → New Form → copy the ID from the action URL -->
+    <form
+      id="contact-form"
+      action="https://formspree.io/f/YOUR_FORM_ID"
+      method="POST"
+      class="contact-form"
+    >
+      <div class="form-row">
+        <div class="form-group">
+          <label for="name">Your Name</label>
+          <input type="text" id="name" name="name" placeholder="Ravi Sharma" required />
+        </div>
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" placeholder="ravi@company.com" required />
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="subject">Subject</label>
+        <input type="text" id="subject" name="subject" placeholder="Internship opportunity / Freelance project / Collaboration" />
+      </div>
+      <div class="form-group">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="5" placeholder="Tell me about the opportunity, project, or just say hello..." required></textarea>
+      </div>
+      <div class="form-footer">
+        <button type="submit" class="btn-primary form-submit" id="submit-btn">
+          <span id="submit-text">Send Message</span>
+          <svg id="submit-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+        </button>
+        <p class="form-note">Usually reply within 24 hours.</p>
+      </div>
+      <!-- Success & Error messages -->
+      <div id="form-success" class="form-message form-success" style="display:none;">
+        ✓ Message sent! I'll get back to you soon.
+      </div>
+      <div id="form-error" class="form-message form-error" style="display:none;">
+        Something went wrong. Please email me directly at alimehdimirza1010@gmail.com
+      </div>
+    </form>
+
     <div class="social-links">
       <a href="https://github.com/ali0786mehdi" target="_blank" class="social-link">
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
