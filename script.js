@@ -79,3 +79,16 @@ function toggleAI(btn, projectId) {
       greetingElement.innerHTML = dynamicText + "Mumbai, Maharashtra · Open to Remote";
     }
     updateGreeting();
+// 1-Click Copy Email
+    function copyEmail(btn) {
+      const email = "alimehdimirza1010@gmail.com";
+      navigator.clipboard.writeText(email).then(() => {
+        const originalText = btn.innerText;
+        btn.innerText = "Copied to clipboard! ✓";
+        btn.style.color = "var(--white)";
+        setTimeout(() => {
+          btn.innerText = originalText;
+          btn.style.color = "var(--gold)";
+        }, 2000);
+      });
+    }
