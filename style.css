@@ -696,6 +696,53 @@ footer {
   letter-spacing: 0.08em;
 }
 
+/* TESTIMONIAL */
+#testimonial { background: var(--surface); }
+.testimonial-card {
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--gold);
+  padding: 2.5rem 3rem;
+  background: var(--bg);
+  border-radius: 4px;
+  max-width: 700px;
+  margin-top: 3rem;
+  position: relative;
+  transition: border-color 0.3s;
+}
+.testimonial-card:hover { border-color: var(--gold-dim); }
+.testimonial-quote {
+  font-family: 'Playfair Display', serif;
+  font-size: 5rem;
+  color: var(--gold);
+  opacity: 0.2;
+  line-height: 1;
+  margin-bottom: -1.5rem;
+}
+.testimonial-text {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.05rem;
+  color: var(--white);
+  line-height: 1.85;
+  font-style: italic;
+  margin-bottom: 1.75rem;
+}
+.testimonial-author {
+  border-top: 1px solid var(--border);
+  padding-top: 1rem;
+}
+.testimonial-name {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--white);
+  margin-bottom: 0.2rem;
+}
+.testimonial-role {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  color: var(--gold);
+}
 /* ANIMATIONS */
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(24px); }
