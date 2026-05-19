@@ -203,6 +203,31 @@ h1 em {
   opacity: 0;
   animation: fadeUp 0.8s 0.8s forwards;
 }
+/* CURRENTLY BUILDING */
+.currently-building {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  color: var(--gold);
+  margin-top: 1.5rem;
+  opacity: 0;
+  animation: fadeUp 0.8s 1.1s forwards;
+}
+.pulse-dot {
+  width: 7px;
+  height: 7px;
+  background: var(--gold);
+  border-radius: 50%;
+  flex-shrink: 0;
+  animation: pulse 2s infinite;
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.3; transform: scale(0.65); }
+}
 .tag {
   font-family: 'DM Mono', monospace;
   font-size: 0.65rem;
