@@ -145,3 +145,33 @@ window.addEventListener('scroll', () => {
   const total = document.body.scrollHeight - window.innerHeight;
   progressBar.style.width = (scrolled / total * 100) + '%';
 });
+
+// Dark / Light mode toggle
+const themeToggle = document.getElementById('theme-toggle');
+const iconMoon = document.getElementById('icon-moon');
+const iconSun = document.getElementById('icon-sun');
+
+function applyTheme(theme) {
+  document.documentElement.setAttribute('data-theme', theme);
+  if (theme === 'light') {
+    iconMoon.style.display = 'none';
+    iconSun.style.display = 'block';
+  } else {
+    iconMoon.style.display = 'block';
+    iconSun.style.display = 'none';
+  }
+}
+
+// On page load — check localStorage first, then system preference
+const savedTheme = localStorage.getItem('theme');
+const systemLight = window.matchMedia('(prefers-color-scheme: light)').matches;
+const initialTheme = savedTheme || (systemLight ? 'light' : 'dark');
+applyTheme(initialTheme);
+
+// On toggle click
+themeToggle.addEventListener('click', () => {
+  const current = document.documentElement.getAttribute('data-theme');
+  const next = current === 'light' ? 'dark' : 'light';
+  applyTheme(next);
+  localStorage.setItem('theme', next);
+});
