@@ -864,5 +864,46 @@ body {
   footer { flex-direction: column; gap: 0.5rem; text-align: center; }
   .form-row { grid-template-columns: 1fr; }
   .contact-form { padding: 1.5rem; }
-  .hero-cta { gap: 1rem; }
+  .hero-cta { gap: 1rem; flex-direction: column; align-items: flex-start; }
+
+  /* ✅ ISSUE #3 — Mobile skills grid fix */
+  .skills-layout {
+    grid-template-columns: 1fr;
+  }
+  .skill-card {
+    padding: 1.5rem;
+  }
+  .skill-items {
+    gap: 0.4rem;
+  }
+  .skill-pill {
+    font-size: 0.58rem;
+    padding: 0.25rem 0.6rem;
+  }
+  .leetcode-stats img {
+    max-width: 100%;
+  }
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+  .stat-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+  .timeline-item {
+    padding: 0 0 3rem 2rem;
+  }
+  .testimonial-card {
+    padding: 1.5rem;
+  }
+  .social-links {
+    flex-direction: column;
+    align-items: center;
+  }
+  h1 {
+    font-size: clamp(2.8rem, 10vw, 4rem);
+  }
+  h2 {
+    font-size: clamp(1.8rem, 6vw, 2.5rem);
+  }
 }
